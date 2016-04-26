@@ -12,24 +12,23 @@ class ViewController: UIViewController {
   
   //array to pass to model to calculate result
   var calculationArray = [String]()
-  
-  
-  //Check if the = pressed
+  //model object
+  var calculationModel = Calculation()
+  //Check if the = just pressed
   var checkResultBool = false
-  
-  var result: Int = 0
   
   //showing  the input/result
   @IBOutlet weak var testInputLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    testInputLabel.numberOfLines = 0
+    testInputLabel.adjustsFontSizeToFitWidth = true
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-  
   
   @IBAction func buttonPressed(sender: UIButton) {
     let tag = sender.tag
@@ -52,7 +51,7 @@ class ViewController: UIViewController {
       //checking if last object is number
       // also checking if the array is empty
       if (length != 0 && Int(calculationArray[length - 1]) != nil) {
-        result = doCalculationUsing(calculationArray)
+        let result = calculationModel.doCalculationUsing(calculationArray)
         testInputLabel.text = "\(result)"
         calculationArray.removeAll()
         //checking if we just calculated something
@@ -67,7 +66,6 @@ class ViewController: UIViewController {
     default :
       break
     }
-    
     // Don't add anything when showing result
     if (checkResultBool == false) {
       testInputLabel.text?.appendContentsOf("\(tag)")
@@ -96,49 +94,7 @@ class ViewController: UIViewController {
       }
     }
     testInputLabel.text = ""
-    
   }
-  
-  func doCalculationUsing(calculateArray: [String]) -> (Int) {
-    
-    //while calling this method from controller it was ensured that 1st index of array is number
-    result = Int(calculateArray[0])!
-    
-    //checking which operation to perform
-    var operatorString = ""
-    
-    //loop continues to find the result
-    for i in 2.stride(to: calculateArray.count, by: 2) {
-      operatorString = calculateArray[i - 1]
-      
-      switch(operatorString) {
-      case "+":
-        result = doSumWith(result, number2: Int(calculateArray[i])!)
-        break
-      case "-":
-        result = doSubWith(result, number2: Int(calculateArray[i])!)
-        break
-      default :
-        break
-      }
-    }
-    //return the result
-    return result
-  }
-  
-  // do the addition
-  func doSumWith(number1: Int, number2:Int)->(Int) {
-    
-    return number1 + number2
-  }
-  
-  // do the substraction
-  func doSubWith(number1: Int, number2:Int)->(Int) {
-    
-    return number1 - number2
-    
-  }
-
   
 }
 

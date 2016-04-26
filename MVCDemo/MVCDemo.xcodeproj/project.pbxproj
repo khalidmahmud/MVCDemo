@@ -14,6 +14,8 @@
 		8491BC881CCF3F21004680C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8491BC861CCF3F21004680C8 /* LaunchScreen.storyboard */; };
 		8491BC931CCF3F21004680C8 /* MVCDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491BC921CCF3F21004680C8 /* MVCDemoTests.swift */; };
 		8491BC9E1CCF3F21004680C8 /* MVCDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491BC9D1CCF3F21004680C8 /* MVCDemoUITests.swift */; };
+		8491BCB11CCF72EB004680C8 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491BCB01CCF72EB004680C8 /* Calculation.swift */; };
+		8491BCB41CCF874B004680C8 /* CustomOperatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8491BCB31CCF874B004680C8 /* CustomOperatorButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		8491BC991CCF3F21004680C8 /* MVCDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MVCDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8491BC9D1CCF3F21004680C8 /* MVCDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVCDemoUITests.swift; sourceTree = "<group>"; };
 		8491BC9F1CCF3F21004680C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8491BCB01CCF72EB004680C8 /* Calculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
+		8491BCB31CCF874B004680C8 /* CustomOperatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOperatorButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 		8491BC7C1CCF3F21004680C8 /* MVCDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8491BCB21CCF8711004680C8 /* View */,
+				8491BCAF1CCF72D2004680C8 /* Model */,
+				8491BCAB1CCF5F8A004680C8 /* Controller */,
 				8491BC7D1CCF3F21004680C8 /* AppDelegate.swift */,
-				8491BC7F1CCF3F21004680C8 /* ViewController.swift */,
 				8491BC811CCF3F21004680C8 /* Main.storyboard */,
 				8491BC841CCF3F21004680C8 /* Assets.xcassets */,
 				8491BC861CCF3F21004680C8 /* LaunchScreen.storyboard */,
@@ -123,6 +129,30 @@
 				8491BC9F1CCF3F21004680C8 /* Info.plist */,
 			);
 			path = MVCDemoUITests;
+			sourceTree = "<group>";
+		};
+		8491BCAB1CCF5F8A004680C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8491BC7F1CCF3F21004680C8 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		8491BCAF1CCF72D2004680C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8491BCB01CCF72EB004680C8 /* Calculation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8491BCB21CCF8711004680C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8491BCB31CCF874B004680C8 /* CustomOperatorButton.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8491BCB41CCF874B004680C8 /* CustomOperatorButton.swift in Sources */,
 				8491BC801CCF3F21004680C8 /* ViewController.swift in Sources */,
+				8491BCB11CCF72EB004680C8 /* Calculation.swift in Sources */,
 				8491BC7E1CCF3F21004680C8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,6 +517,7 @@
 				8491BCA41CCF3F21004680C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8491BCA51CCF3F21004680C8 /* Build configuration list for PBXNativeTarget "MVCDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +526,7 @@
 				8491BCA71CCF3F21004680C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8491BCA81CCF3F21004680C8 /* Build configuration list for PBXNativeTarget "MVCDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +535,7 @@
 				8491BCAA1CCF3F21004680C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
